@@ -29,17 +29,18 @@ if cap.isOpened():
     while True:
         ret, frame = cap.read()
         if ret is True:
-
+            # 灰度转换
             gray_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             face = cv2.CascadeClassifier(haarcascades).detectMultiScale(gray_img, 1.5, 5, minSize=(285, 285),
                                                                         maxSize=(286, 286))
+            # 判断是否检测到人脸
             if len(face) != 0:
                 for x, y, w, h in face:
                     cv2.rectangle(frame, (x, y), (x + w, y + h), color=(0, 0, 255), thickness=2)
                     # 人脸识别
                     id, confidence = recognizer.predict(gray_img[y:y + h, x:x + w])
 
-                    # 创建摄像头前置的文字框
+                    # 创建摄像头前置的文字框,使用中文会乱码，需要加载工具
                     cv2.putText(frame, 'face', (x + 8, y + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 3)
                     print(id)
                     print(confidence)

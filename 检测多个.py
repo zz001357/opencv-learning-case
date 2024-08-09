@@ -9,7 +9,7 @@
 # @Date:   2024-07-22
 # @Last Modified by:   Zhang Ze
 
-# 1.导入cv模块
+# 1.导入cv模块 【pip install opency-python】 这里安装的是4.10
 import cv2
 
 
@@ -28,6 +28,13 @@ def face_detect_def(resize_img):
                表示使用 Canny 边缘检测器来拒绝一些区域。
         5.minSize目标的最小尺寸，小于这个尺寸的目标将被忽略。
         6.maxSize目标的最大尺寸，大于这个尺寸的目标将被忽略。
+        
+        
+        haarcascades是opencv模块的联机分类器，训练好的模型作为预识别。
+        下载地址 https://opencv.org/releases/
+        **Haar特征**、**Haar特征的改进版本（Haar_alt和Haar_alt2）**、**LBP特征**等。
+        **Haar_alt2** 在简单背景图像中检测效果较好。   
+        **LBP** 在复杂背景图像中的检测效果较好
     '''
     haarcascades = 'D:/PyProjects/opencv/sources/data/haarcascades/haarcascade_frontalface_alt2.xml'
     faces = cv2.CascadeClassifier(haarcascades).detectMultiScale(

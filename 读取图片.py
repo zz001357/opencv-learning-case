@@ -5,13 +5,14 @@
 # @Last Modified by:   Zhang Ze
 
 
-# 1.导入cv模块
+# 1.导入cv模块 【pip install opency-python】 这里安装的是4.10
 import cv2
 
 # 2.导入图片
-img = cv2.imread('./img/_DSF1297.jpg')
+img = cv2.imread('./img/_DSF0488-1.jpg')
 
 # 3.显示图片
+# winname为show的框体名，必填
 cv2.imshow("GRAY", img)
 
 # 4.等待.毫秒为单位，0代表无限等待，直到按键事件发生

@@ -39,7 +39,7 @@ if cap.isOpened():
             # 按钮关闭
             if cv2.getWindowProperty('video', cv2.WND_PROP_VISIBLE) < 1:
                 break
-            # 按s保存
+            # 按s保存，使用ord转换Unicode码点
             if k == ord('s'):
                 print("保存")
                 save_time = time.time()

@@ -37,7 +37,7 @@ def get_image_label(path):
             id = int(f.split('_')[0])
             ids.append(id)
             image_paths.append(os.path.join(f_path, i))
-    # 遍历图片
+    # 遍历图片，获取 对应标签和图片，这里以图片顺序为标签
     for n, imagePath in enumerate(image_paths):
         index = ids[n]
         img = cv2.imread(imagePath)
