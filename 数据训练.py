@@ -60,6 +60,7 @@ def get_image_label(path):
 
 
 if __name__ == '__main__':
+
     # 模型路径
     path = './faces/'
     # 获取人脸数据和身份信息
